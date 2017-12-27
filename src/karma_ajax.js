@@ -1,15 +1,6 @@
-function isNum(num) {
-	if (typeof num === 'number') {
-		return true
-	} else {
-		return false
-	}
-}
-
-Promise.resolve(42).then(function(value){
-	console.log(value);
-});
-
+/**
+ * Created by xtao on 2017/12/26.
+ */
 function getURLCallback(URL, callback) {
 	var req = new XMLHttpRequest();
 	req.open('GET', URL, true);
@@ -65,10 +56,5 @@ function allRequest(requests, callback, results) {
 function main(callback) {
 	allRequest([request.comment, request.people], callback, []);
 }
-// 运行的例子
-main(function(error, results){
-	if(error){
-		return console.error(error);
-	}
-	console.log(results);
-});
+
+export default main;
